@@ -1,0 +1,102 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,400;0,500;0,600;1,400;1,500;1,600&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+base {
+  color: #1f2605;
+  color: #1f6521;
+  color: #53900f;
+  color: #a4a71e;
+  color: rgb(214, 206, 21);
+}
+
+body {
+  font-family: 'Open Sans', sans-serif;
+  color: #fff;
+  font-size: 18px;
+  background: #1f2605;
+
+}
+
+.container{
+  margin: 50px;
+  /* position: relative; */
+}
+ button{
+  background-color: #a4a71e;
+  color: #ffffff;
+  border: 0;
+  outline: 0;
+  cursor: pointer;
+  border-radius: 7%;
+  width: 120px;
+  height: 40px;
+  margin: 5px;
+    }
+#toastBox{
+  position: absolute;
+  bottom: 15%;
+  /* left: 30px; */
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  overflow: hidden;
+  padding: 4px;
+
+}
+.toast{
+  width: 400px;
+  height: 60px;
+  background: #a4a71e;
+  font-weight: 500;
+  margin: 10px 0;
+  color: #fff;
+   box-shadow: 0 0 20px rgba(214, 206, 21, 0.3);
+  display: flex;
+  align-items: center;
+  position: relative;
+  transform: translateX(-100%);
+  animation: moveRight 0.5s linear forwards;
+}
+.toast i{
+  margin: 0 20px;
+  font-size: 35px;
+  color: #1f6521;
+}
+.toast.error i{
+  color: red;
+}
+.toast.invalid i{
+  color: orange;
+}
+.toast::after{
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 5px;
+  background: #1f6521;
+  animation: line 5s linear backwards;
+}
+.toast.error::after{
+  background: red;
+}
+.toast.toast.invalid::after{
+  background: orange;
+}
+@keyframes line{
+  100%{
+    width: 0;
+  }
+}
+
+@keyframes moveRight{
+  100%{
+    transform: translateX(0%);
+  }
+}
